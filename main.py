@@ -37,14 +37,14 @@ dark_grey = pygame.Color(116, 117, 117)
 
 # ------------------ artifact position ------------------ #
 artifact_spawn = True
-artifact_position = [random.randrange(1, (window_x // 10)) * 10 + 20,
-                     random.randrange(1, (window_y // 10)) * 10 - 20]
+artifact_position = [random.randrange(1, (window_x // 10)) * 10 + 10,
+                     random.randrange(1, (window_y // 10)) * 10 - 10]
 # ------------------ artifact position ------------------ #
 
 # ------------------ fruit position ------------------ #
 fruit_spawn = True
-fruit_position = [random.randrange(1, (window_x // 10)) * 10 + 20,
-                  random.randrange(1, (window_y // 10)) * 10 - 20]
+fruit_position = [random.randrange(1, (window_x // 10)) * 10 + 10,
+                  random.randrange(1, (window_y // 10)) * 10 - 10]
 # ------------------ fruit position ------------------ #
 
 # Initialising pygame
@@ -140,7 +140,7 @@ def game_over(snake1, action, snake2=''):
 
     # setting position of the text
     game_over_rect.midtop = (window_x / 2, window_y / 4)
-    game_window_closing_txt_rect.midtop = ((window_x / 2, window_y - 50))
+    game_window_closing_txt_rect.midtop = (window_x / 2, window_y - 50)
 
     # blit will draw the text on screen
     game_window.blit(game_over_surface, game_over_rect)
