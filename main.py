@@ -37,14 +37,14 @@ dark_grey = pygame.Color(116, 117, 117)
 
 # ------------------ artifact position ------------------ #
 artifact_spawn = True
-artifact_position = [random.randrange(1, (window_x // 10)) * 10 + 10,
-                     random.randrange(1, (window_y // 10)) * 10 - 10]
+artifact_position = [random.randrange(1, (window_x // 10)) * 10,
+                     random.randrange(1, (window_y // 10)) * 10]
 # ------------------ artifact position ------------------ #
 
 # ------------------ fruit position ------------------ #
 fruit_spawn = True
-fruit_position = [random.randrange(1, (window_x // 10)) * 10 + 10,
-                  random.randrange(1, (window_y // 10)) * 10 - 10]
+fruit_position = [random.randrange(1, (window_x // 10)) * 10,
+                  random.randrange(1, (window_y // 10)) * 10]
 # ------------------ fruit position ------------------ #
 
 # Initialising pygame
@@ -228,15 +228,15 @@ while True:
 
     # respawn artifact
     if not artifact_spawn:
-        artifact_position = [random.randrange(1, (window_x // 10)) * 10 + 20,
-                             random.randrange(1, (window_y // 10)) * 10 - 20]
+        artifact_position = [random.randrange(1, (window_x // 10)) * 10,
+                             random.randrange(1, (window_y // 10)) * 10]
 
     artifact_spawn = True
 
     # respawn fruit
     if not fruit_spawn:
-        fruit_position = [random.randrange(1, (window_x // 10)) * 10 + 20,
-                          random.randrange(1, (window_y // 10)) * 10 - 20]
+        fruit_position = [random.randrange(1, (window_x // 10)) * 10,
+                          random.randrange(1, (window_y // 10)) * 10]
 
     fruit_spawn = True
 
