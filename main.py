@@ -51,7 +51,7 @@ fruit_position = [random.randrange(1, (window_x // 10)) * 10,
 pygame.init()
 
 # Initialise game window
-pygame.display.set_caption('Snake Game Competition')
+pygame.display.set_caption('Snake Game Competition (v2.0.0-stable)')
 game_window = pygame.display.set_mode((window_x, window_y))
 
 # FPS (frames per second) controller
@@ -200,6 +200,10 @@ while True:
     snake_2.update_fruit_position(fruit_position)
     snake_2.update_score(snake_2_score)
     snake_2.update_enemy_score(snake_1_score)
+
+    # reset snake move lock
+    snake_1.move_unlock_FOR_MAIN_ONLY()
+    snake_2.move_unlock_FOR_MAIN_ONLY()
 
     # Snake body growing mechanism
     # will be incremented by 10
