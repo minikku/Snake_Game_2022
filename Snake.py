@@ -1,3 +1,6 @@
+from abc import abstractmethod
+
+
 class SnakeClass(object):
 
     def __init__(self):
@@ -121,6 +124,7 @@ class SnakeClass(object):
             self.insert_body([self.__position[0], self.__position[1]])
             self.move_lock()
 
+    @abstractmethod
     def snake_control(self):
         # override this method
         pass

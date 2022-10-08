@@ -36,22 +36,28 @@ grey = pygame.Color(204, 204, 204)
 dark_grey = pygame.Color(116, 117, 117)
 
 # ------------------ artifact position ------------------ #
-artifact_spawn = True
-artifact_position = [random.randrange(1, (window_x // 10)) * 10,
-                     random.randrange(1, (window_y // 10)) * 10]
-# ------------------ artifact position ------------------ #
+artifact_spawn = False
+while not artifact_spawn:
+    artifact_position = [random.randrange(1, (window_x // 10)) * 10,
+                         random.randrange(1, (window_y // 10)) * 10]
+    if (artifact_position not in snake_1.get_body() and artifact_position not in snake_1.get_position()) and (
+            artifact_position not in snake_2.get_body() and artifact_position not in snake_2.get_position()):
+        artifact_spawn = True
 
 # ------------------ fruit position ------------------ #
-fruit_spawn = True
-fruit_position = [random.randrange(1, (window_x // 10)) * 10,
-                  random.randrange(1, (window_y // 10)) * 10]
-# ------------------ fruit position ------------------ #
+fruit_spawn = False
+while not fruit_spawn:
+    fruit_position = [random.randrange(1, (window_x // 10)) * 10,
+                      random.randrange(1, (window_y // 10)) * 10]
+    if (fruit_position not in snake_1.get_body() and fruit_position not in snake_1.get_position()) and (
+            fruit_position not in snake_2.get_body() and fruit_position not in snake_2.get_position()):
+        fruit_spawn = True
 
 # Initialising pygame
 pygame.init()
 
 # Initialise game window
-pygame.display.set_caption('Snake Game Competition (v2.0.0-stable)')
+pygame.display.set_caption('Snake Game Competition (v3.1.0-stable)')
 game_window = pygame.display.set_mode((window_x, window_y))
 
 # FPS (frames per second) controller
@@ -231,18 +237,20 @@ while True:
         fruit_spawn = False
 
     # respawn artifact
-    if not artifact_spawn:
+    while not artifact_spawn:
         artifact_position = [random.randrange(1, (window_x // 10)) * 10,
                              random.randrange(1, (window_y // 10)) * 10]
-
-    artifact_spawn = True
+        if (artifact_position not in snake_1.get_body() and artifact_position not in snake_1.get_position()) and (
+                artifact_position not in snake_2.get_body() and artifact_position not in snake_2.get_position()):
+            artifact_spawn = True
 
     # respawn fruit
-    if not fruit_spawn:
+    while not fruit_spawn:
         fruit_position = [random.randrange(1, (window_x // 10)) * 10,
                           random.randrange(1, (window_y // 10)) * 10]
-
-    fruit_spawn = True
+        if (fruit_position not in snake_1.get_body() and fruit_position not in snake_1.get_position()) and (
+                fruit_position not in snake_2.get_body() and fruit_position not in snake_2.get_position()):
+            fruit_spawn = True
 
     game_window.fill(white)
 
