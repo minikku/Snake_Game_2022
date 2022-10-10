@@ -10,10 +10,10 @@ class SnakeClass(object):
         self.__enemy_body = []
         self.__artifact_position = []
         self.__fruit_position = []
-        self.__safe_zone_min_x = 0
-        self.__safe_zone_max_x = 0
-        self.__safe_zone_min_y = 0
-        self.__safe_zone_max_y = 0
+        self.safe_zone_min_x = 0
+        self.safe_zone_max_x = 0
+        self.safe_zone_min_y = 0
+        self.safe_zone_max_y = 0
         self.__score = 0
         self.__enemy_score = 0
         self.__move_locked_status = False
@@ -47,10 +47,10 @@ class SnakeClass(object):
 
     # intelligence information report
     def set_safe_zone(self, input_boundary: list):
-        self.__safe_zone_min_x = input_boundary[0]
-        self.__safe_zone_max_x = input_boundary[1]
-        self.__safe_zone_min_y = input_boundary[2]
-        self.__safe_zone_max_y = input_boundary[3]
+        self.safe_zone_min_x = input_boundary[0]
+        self.safe_zone_max_x = input_boundary[1]
+        self.safe_zone_min_y = input_boundary[2]
+        self.safe_zone_max_y = input_boundary[3]
 
     # enemy's body
     def update_enemy_body(self, pos: list):
